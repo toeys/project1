@@ -9,7 +9,7 @@ st.title('🎈 You are Good guys or Bad guys?')
 
 model = tf.keras.models.load_model("GoodVSBad_Model.hdf5")
 
-uploaded_file = st.file_uploader("Choose a image file", type="jpg")
+uploaded_file = st.file_uploader("Choose a image file or Take your Photo", type=['jpg', 'png'])
 
 map_dict = {0: 'savory',
             1: 'unsavory'}
