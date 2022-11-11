@@ -11,8 +11,8 @@ model = tf.keras.models.load_model("GoodVSBad_Model.hdf5")
 
 uploaded_file = st.file_uploader("Choose a image file or Take your Photo", type=['jpg', 'png'])
 
-map_dict = {0: 'savory',
-            1: 'unsavory'}
+map_dict = {0: 'Good guys',
+            1: 'Bad guys'}
 
 
 
@@ -32,7 +32,7 @@ if uploaded_file is not None:
     Genrate_pred = st.button("Generate Prediction")    
     if Genrate_pred:
         prediction = model.predict(img_reshape).argmax()
-        st.title("Predicted Label for the image is {}".format(map_dict [prediction]))
+        st.title("You are  {}!".format(map_dict [prediction]))
 
 
 
